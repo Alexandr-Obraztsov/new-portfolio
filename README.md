@@ -1,5 +1,6 @@
 # React + TypeScript + Vite
 
+icons: https://icons8.ru/icon/set/%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5/3d-plastilina
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -15,13 +16,13 @@ If you are developing a production application, we recommend updating the config
 
 ```js
 export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
+	languageOptions: {
+		// other options...
+		parserOptions: {
+			project: ['./tsconfig.node.json', './tsconfig.app.json'],
+			tsconfigRootDir: import.meta.dirname,
+		},
+	},
 })
 ```
 
@@ -34,17 +35,17 @@ export default tseslint.config({
 import react from 'eslint-plugin-react'
 
 export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
+	// Set the react version
+	settings: { react: { version: '18.3' } },
+	plugins: {
+		// Add the react plugin
+		react,
+	},
+	rules: {
+		// other rules...
+		// Enable its recommended rules
+		...react.configs.recommended.rules,
+		...react.configs['jsx-runtime'].rules,
+	},
 })
 ```

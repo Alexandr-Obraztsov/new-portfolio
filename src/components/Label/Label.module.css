@@ -1,0 +1,47 @@
+.labelContainer {
+	position: relative;
+	width: var(--desktop-label-width);
+	height: var(--desktop-label-height);
+}
+
+.label {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	padding: 3px;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 3px;
+	gap: 5px;
+	transition: var(--transition-delay) linear background-color;
+	&:hover {
+		background-color: rgba(232, 246, 253, 0.2);
+	}
+}
+
+.labelIcon {
+	height: calc(
+		var(--desktop-label-height) - 11px - var(--desktop-label-font-size)
+	);
+	width: calc(
+		var(--desktop-label-height) - 11px - var(--desktop-label-font-size)
+	);
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.labelTitle {
+	font-size: var(--desktop-label-font-size);
+	line-height: var(--desktop-label-font-size);
+	text-align: center;
+	color: var(--text-color);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	max-width: 100%;
+	word-break: break-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: calc(var(--desktop-label-font-size) * 3);
+	z-index: 1;
+}
