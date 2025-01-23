@@ -1,0 +1,27 @@
+.bottomMenu {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: rgba(168, 168, 168, 0.411);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	list-style: none;
+	height: 80px;
+	padding: '0 30px';
+}
+
+.menuItem {
+	transition: all var(--transition-delay);
+	display: block;
+	width: 80px;
+	height: 80px;
+
+	&:hover {
+		width: 100px;
+		height: 100px;
+		transform: translateY(-5px);
+	}
+}

@@ -20,7 +20,7 @@ body,
 	vertical-align: baseline;
 	box-sizing: border-box;
 	user-select: none;
-	-webkit-user-drag: unset;
+	-webkit-user-drag: none;
 }
 body {
 	font-family: 'Titillium Web', system-ui, -apple-system, BlinkMacSystemFont,

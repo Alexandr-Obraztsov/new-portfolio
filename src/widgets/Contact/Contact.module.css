@@ -1,0 +1,219 @@
+.letterContainer {
+	--letter-width: 500px;
+	--letter-height: 300px;
+	--form-top-offset: 300px;
+	--letter-translate-delay: 0.5s;
+	--letter-sending-delay: 2s;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 30px;
+}
+
+.letter {
+	margin-top: var(--form-top-offset);
+	width: var(--letter-width);
+	height: var(--letter-height);
+	background: #87bcff;
+	position: relative;
+	transform-style: preserve-3d;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	cursor: pointer;
+}
+
+.letter:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	clip-path: polygon(100% 0, 100% 100%, 0 100%);
+	width: var(--letter-width);
+	height: var(--letter-height);
+	background-color: #3792e2;
+	z-index: 6;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.letter:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	clip-path: polygon(0 0, 100% 100%, 0 100%);
+	width: var(--letter-width);
+	height: var(--letter-height);
+	background-color: #51b9ec;
+	z-index: 5;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.letterBang {
+	position: absolute;
+	top: calc(var(--letter-height) / -2);
+	left: 0;
+	transform-origin: bottom;
+	transform: rotateX(0deg);
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: #87bcff;
+	width: var(--letter-width);
+	height: calc(var(--letter-height) / 2);
+	z-index: 3;
+	transition: all var(--letter-translate-delay);
+}
+
+.contactForm {
+	position: relative;
+	top: calc(var(--form-top-offset) * -1);
+	left: 20px;
+	background: #e4e1e1;
+	border-radius: 20px;
+	padding: 20px;
+
+	width: calc(var(--letter-width) - 40px);
+	height: 460px;
+
+	transition: all var(--letter-translate-delay) var(--letter-translate-delay);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+	z-index: 4;
+}
+
+.contactInput {
+	position: relative;
+	width: 100%;
+}
+
+.contactInput input {
+	padding-left: 10px;
+	width: 100%;
+	background-color: transparent;
+	border-bottom: 2px solid #9e9e9e54;
+	outline: none;
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.contactInput textarea {
+	scrollbar-width: thin;
+	padding: 10px;
+	width: 100%;
+	resize: none;
+	background-color: transparent;
+	border: 2px solid #9e9e9e54;
+	border-radius: 10px;
+	outline: none;
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.contactInput textarea::placeholder {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.contactInput input::placeholder {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.contactInput span {
+	content: '';
+	height: 1px;
+	width: 0%;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	display: block;
+	background-color: #272727;
+	transition: all var(--transition-delay);
+}
+
+.contactInput > input:focus + span {
+	width: 100%;
+}
+
+.sended .letterBang {
+	transform: rotateX(-180deg);
+	z-index: 6;
+	transition: all var(--letter-translate-delay) var(--letter-translate-delay);
+}
+
+.sended .contactForm {
+	top: 10px;
+	transition: all var(--letter-translate-delay);
+	height: calc(var(--letter-height) - 20px);
+}
+
+.sended.letter {
+	animation: letterSending var(--letter-sending-delay)
+			var(--letter-translate-delay) forwards,
+		letterAppearance var(--letter-sending-delay) var(--letter-sending-delay)
+			forwards;
+}
+
+.successMessage {
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	font-weight: 600;
+	font-size: 30px;
+	opacity: 0;
+	color: #3792e2;
+}
+
+.sended.successMessage {
+	animation: messageAppearance var(--letter-sending-delay)
+		calc(var(--letter-sending-delay) / 2);
+}
+
+@keyframes letterSending {
+	0% {
+		margin-top: var(--form-top-offset);
+		transform: translateX(0);
+		color: transparent;
+	}
+	50% {
+		margin-top: 0;
+		transform: translateX(0);
+	}
+	100% {
+		margin-top: 0;
+		transform: translateX(1000px);
+	}
+}
+
+@keyframes letterAppearance {
+	0% {
+		margin-top: 0;
+		transform: translateX(-1000px);
+	}
+	50% {
+		margin-top: 0;
+		transform: translateX(0);
+	}
+	100% {
+		margin-top: var(--form-top-offset);
+		transform: translateX(0);
+	}
+}
+
+@keyframes messageAppearance {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}

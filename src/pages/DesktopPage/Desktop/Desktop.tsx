@@ -3,43 +3,53 @@ import contact from '../../../assets/icons/contact.png'
 import document from '../../../assets/icons/document.png'
 import projects from '../../../assets/icons/projects.png'
 import trash from '../../../assets/icons/trash.png'
-import { Label } from '../../../components/Label/Label'
+import { Label, LabelPropsType } from '../../../components/Label/Label'
+import { useWidgets } from '../../../hooks/useWidgets'
+import { WidgetType } from '../../../widgets/types/Widget.types'
 import s from './Desktop.module.css'
 
-const labels = [
+type LabelType = Omit<LabelPropsType, 'onClick'> & { widgetType: WidgetType }
+
+const labels: LabelType[] = [
 	{
 		title: 'About me',
 		imgSrc: about,
-		onClick: () => console.log('clicked'),
+		widgetType: WidgetType.ABOUT,
 		position: { x: 1, y: 1 },
 	},
 	{
 		title: 'Contact',
 		imgSrc: contact,
-		onClick: () => console.log('clicked'),
+		widgetType: WidgetType.CONTACT,
 		position: { x: 1, y: 3 },
 	},
 	{
 		title: 'Skills',
 		imgSrc: document,
-		onClick: () => console.log('clicked'),
+		widgetType: WidgetType.SKILLS,
 		position: { x: 1, y: 2 },
 	},
 	{
 		title: 'Projects',
 		imgSrc: projects,
-		onClick: () => console.log('clicked'),
+		widgetType: WidgetType.PROJECTS,
 		position: { x: 2, y: 1 },
 	},
 	{
 		title: 'Trash',
 		imgSrc: trash,
-		onClick: () => console.log('clicked'),
+		widgetType: WidgetType.TRASH,
 		position: { x: -2, y: -2 },
 	},
 ]
 
 export const Desktop = () => {
+	const { widgets, openWidget } = useWidgets()
+
+	const handleClick = (widgetType: WidgetType) => () => {
+		openWidget({ type: widgetType })
+	}
+
 	return (
 		<main className={s.desktop}>
 			{labels.map(label => (
@@ -47,7 +57,7 @@ export const Desktop = () => {
 					key={label.title}
 					title={label.title}
 					imgSrc={label.imgSrc}
-					onClick={label.onClick}
+					onClick={handleClick(label.widgetType)}
 					position={label.position}
 				/>
 			))}

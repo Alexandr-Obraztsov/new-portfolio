@@ -6,14 +6,14 @@ export type Position = {
 	y: number
 }
 
-type Props = {
+export type LabelPropsType = {
 	title: string
 	imgSrc: string
 	onClick?: () => void
 	position: Position
 }
 
-export const Label = ({ title, imgSrc, position, onClick }: Props) => {
+export const Label = ({ title, imgSrc, position, onClick }: LabelPropsType) => {
 	const positionStyles: CSSProperties = {
 		gridRowStart: position.y,
 		gridColumnStart: position.x,

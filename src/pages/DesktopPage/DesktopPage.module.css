@@ -1,7 +1,10 @@
 .desktopContainer {
+	position: relative;
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	width: 100vw;
 	height: 100vh;
 	background-image: url(../../assets/desktop.jpg);
+	background-size: cover;
 }

@@ -1,0 +1,27 @@
+.header {
+	background-color: rgb(228, 228, 228);
+	border-bottom: 1px solid rgb(209, 209, 209);
+	position: relative;
+	padding: 3px 6px;
+	display: flex;
+	align-items: center;
+}
+
+.title {
+	text-align: center;
+	flex-grow: 1;
+}
+
+.close {
+	position: absolute;
+
+	width: 15px;
+	height: 15px;
+	background-color: rgb(255, 96, 117);
+	border: 1px solid rgb(212, 72, 91);
+	border-radius: 50%;
+
+	&:hover {
+		background-color: rgb(250, 67, 92);
+	}
+}
