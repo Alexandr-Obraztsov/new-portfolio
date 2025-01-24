@@ -9,11 +9,23 @@ export type Position = {
 export type LabelPropsType = {
 	title: string
 	imgSrc: string
-	onClick?: () => void
 	position: Position
+	onClick?: () => void
+	styles?: {
+		label?: CSSProperties
+		labelIcon?: CSSProperties
+		labelTitle?: CSSProperties
+	}
 }
 
-export const Label = ({ title, imgSrc, position, onClick }: LabelPropsType) => {
+export const Label = ({
+	title,
+	imgSrc,
+	position,
+	onClick,
+	styles,
+}: LabelPropsType) => {
+	const { label, labelIcon, labelTitle } = styles || {}
 	const positionStyles: CSSProperties = {
 		gridRowStart: position.y,
 		gridColumnStart: position.x,
@@ -21,13 +33,16 @@ export const Label = ({ title, imgSrc, position, onClick }: LabelPropsType) => {
 
 	return (
 		<div style={positionStyles} className={s.labelContainer}>
-			<div className={s.label} onClick={onClick}>
+			<div style={label} className={s.label} onClick={onClick}>
 				<img
+					style={labelIcon}
 					className={s.labelIcon}
 					src={imgSrc}
 					alt={`Image of: "${title}"`}
 				/>
-				<span className={s.labelTitle}>{title}</span>
+				<span style={labelTitle} className={s.labelTitle}>
+					{title}
+				</span>
 			</div>
 		</div>
 	)

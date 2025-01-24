@@ -17,11 +17,12 @@ export const BaseWidget = ({ title, widget, children }: Props) => {
 	const [position, setPosition] = useState({ x: 0, y: 0 })
 	const ref = useRef<HTMLElement | null>(null)
 
-	const handleDrag = (_: DraggableEvent, data: DraggableData) => {
-		setPosition({
-			x: data.x,
-			y: data.y,
-		})
+	const handleDrag = (e: DraggableEvent, data: DraggableData) => {
+		if (data.node)
+			setPosition({
+				x: data.x,
+				y: data.y,
+			})
 	}
 
 	const handleFocus = () => {
@@ -47,11 +48,16 @@ export const BaseWidget = ({ title, widget, children }: Props) => {
 			position={position}
 			onDrag={handleDrag}
 			onMouseDown={handleFocus}
+			handle='header'
 		>
-			<article ref={ref}>
-				<Header title={title} id={widget.id} />
-				<section className={s.widgetBody}>{children}</section>
-			</article>
+			<div>
+				<article ref={ref}>
+					<header className={(!widget.isActive && s.disabled) || ''}>
+						<Header title={title} id={widget.id} />
+					</header>
+					<section className={s.widgetBody}>{children}</section>
+				</article>
+			</div>
 		</Draggable>
 	)
 }

@@ -1,6 +1,7 @@
 import { useWidgets } from '../../hooks/useWidgets'
 import { About } from '../../widgets/About/About'
 import { Contact } from '../../widgets/Contact/Contact'
+import { Explorer } from '../../widgets/Explorer/Explorer'
 import { WidgetType } from '../../widgets/types/Widget.types'
 import { WidgetProps } from '../../widgets/types/WidgetProps.types'
 
@@ -14,6 +15,8 @@ export const WidgetsContainer = () => {
 		> = {
 			[WidgetType.ABOUT]: About,
 			[WidgetType.CONTACT]: Contact,
+			[WidgetType.PROJECTS]: Explorer,
+			[WidgetType.TRASH]: Explorer,
 		}
 
 		const WidgetComponent = widgetsMap[widget.type]

@@ -33,12 +33,13 @@
 }
 
 .labelTitle {
+	display: block;
 	font-size: var(--desktop-label-font-size);
 	line-height: var(--desktop-label-font-size);
 	text-align: center;
 	color: var(--text-color);
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-	max-width: 100%;
+	width: 100%;
 	word-break: break-all;
 	overflow: hidden;
 	text-overflow: ellipsis;

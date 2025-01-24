@@ -5,6 +5,10 @@
 	padding: 3px 6px;
 	display: flex;
 	align-items: center;
+
+	&:active {
+		cursor: grab;
+	}
 }
 
 .title {

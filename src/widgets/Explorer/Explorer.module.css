@@ -1,0 +1,12 @@
+.explorerContainer {
+	display: grid;
+	grid-template-columns: repeat(5, var(--desktop-label-width));
+	grid-template-rows: repeat(3, var(--desktop-label-height));
+	gap: 10px;
+}
+
+.explorerLabel {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
