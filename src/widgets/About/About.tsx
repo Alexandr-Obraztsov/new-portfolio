@@ -1,4 +1,4 @@
-import me from '../../assets/about/me.png'
+import me from '../../assets/icons/widgets/about/me.png'
 import { BaseWidget } from '../../components/BaseWidget/BaseWidget'
 import { WidgetProps } from '../types/WidgetProps.types'
 import s from './About.module.css'

@@ -4,7 +4,13 @@
 	flex-grow: 1;
 	display: grid;
 	grid-auto-flow: row;
-	grid-template-columns: repeat(auto-fill, var(--desktop-label-width));
-	grid-template-rows: repeat(auto-fill, var(--desktop-label-height));
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(var(--desktop-label-height), 1fr)
+	);
+	grid-template-rows: repeat(
+		auto-fill,
+		minmax(var(--desktop-label-height), 1fr)
+	);
 	grid-gap: 20px;
 }

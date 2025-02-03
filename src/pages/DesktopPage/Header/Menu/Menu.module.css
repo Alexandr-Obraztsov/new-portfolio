@@ -6,6 +6,10 @@
 	list-style: none;
 	display: flex;
 	gap: 40px;
+
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
 }
 
 .menu ul li {

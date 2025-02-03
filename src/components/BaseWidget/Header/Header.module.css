@@ -1,6 +1,5 @@
 .header {
-	background-color: rgb(228, 228, 228);
-	border-bottom: 1px solid rgb(209, 209, 209);
+	background-color: var(--black-purple-color);
 	position: relative;
 	padding: 3px 6px;
 	display: flex;
@@ -12,6 +11,7 @@
 }
 
 .title {
+	color: var(--text-color);
 	text-align: center;
 	flex-grow: 1;
 }

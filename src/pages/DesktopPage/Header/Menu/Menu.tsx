@@ -5,8 +5,7 @@ export const Menu = () => {
 		<nav className={s.menu}>
 			<ul>
 				<li>About</li>
-				<li>Skills</li>
-				<li>Project</li>
+				<li>Projects</li>
 				<li>Contact</li>
 			</ul>
 		</nav>

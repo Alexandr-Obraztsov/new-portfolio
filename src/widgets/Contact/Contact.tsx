@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import check from '../../assets/contact/check.png'
+import check from '../../assets/icons/widgets/contact/check.png'
 import { BaseWidget } from '../../components/BaseWidget/BaseWidget'
 import { WidgetProps } from '../types/WidgetProps.types'
 import s from './Contact.module.css'

@@ -5,6 +5,7 @@ export enum WidgetType {
 	CONTACT = 'contact',
 	TRASH = 'trash',
 	MUSIC = 'music',
+	GAME = 'game',
 }
 
 export type Widget = {

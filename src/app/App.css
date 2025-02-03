@@ -1,12 +1,27 @@
 :root {
 	--text-color: rgb(231, 231, 231);
+	--secondary-text-color: #9a9ab3;
 	--text-hovered-color: rgb(224, 160, 240);
 	--transition-delay: 0.1s;
+	--animation-delay: 0.5s;
+
+	--black-color: rgb(0, 0, 0);
+	--alpha-black-color: rgba(0, 0, 0, 0.2);
+	--separator-color: rgb(255, 255, 255, 0.5);
+
+	--black-purple-color: #242339;
+	--alpha-black-purple-color: rgba(87, 50, 65, 0.8);
 
 	/* Настройки для десктопа */
-	--desktop-label-width: 100px;
-	--desktop-label-height: 100px;
+	--desktop-label-width: 110px;
+	--desktop-label-height: 110px;
 	--desktop-label-font-size: 20px;
+
+	@media screen and (max-width: 768px) {
+		--desktop-label-width: 120px;
+		--desktop-label-height: 120px;
+		--desktop-label-font-size: 20px;
+	}
 }
 
 html,

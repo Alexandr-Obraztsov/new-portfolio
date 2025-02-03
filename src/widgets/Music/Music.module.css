@@ -1,0 +1,110 @@
+.musicContainer {
+	padding: 15px 20px;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Roboto', sans-serif;
+	min-width: 280px;
+}
+
+.info {
+	display: grid;
+	align-items: center;
+	color: var(--text-color);
+
+	grid-template-columns: 80px 1fr;
+	text-align: left;
+	column-gap: 20px;
+	grid-template-areas:
+		'picture title'
+		'picture author';
+}
+
+.musicPicture {
+	grid-area: picture;
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+	background-color: #582e46;
+	background-size: cover;
+}
+
+.musicTitle {
+	grid-area: title;
+	font-size: 27px;
+	line-height: 32px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	align-self: flex-end;
+}
+
+.musicAuthor {
+	align-self: flex-start;
+	grid-area: author;
+	white-space: nowrap;
+	line-height: 25px;
+	font-size: 19px;
+	font-weight: 500;
+	opacity: 0.68;
+}
+
+.controls {
+	color: var(--text-color);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 10px;
+
+	& > * {
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+	}
+}
+
+.timeline {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.timeline progress {
+	width: 100%;
+	height: 7px;
+	appearance: none;
+	border-radius: 3px;
+}
+
+.progressBar {
+	width: 100%;
+	height: 7px;
+	background-color: var(--alpha-black-color);
+	border-radius: 10px;
+}
+
+.progress {
+	position: relative;
+	height: 7px;
+	background-color: var(--text-color);
+	border-radius: 10px;
+}
+
+.progress::after {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background-color: var(--text-color);
+	border-radius: 50%;
+	right: 0;
+	top: 50%;
+	transform: translate(50%, -50%);
+}
+
+.timeline span {
+	color: var(--text-color);
+	display: block;
+	text-align: center;
+	margin-top: 4px;
+	font-size: 18px;
+	font-weight: 600;
+}

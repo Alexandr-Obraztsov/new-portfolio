@@ -5,6 +5,10 @@
 	--letter-translate-delay: 0.5s;
 	--letter-sending-delay: 2s;
 
+	--letter-primary-color: #ffc787;
+	--letter-secondary-color: #e28437;
+	--letter-tertiary-color: #eca451;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -18,7 +22,7 @@
 	margin-top: var(--form-top-offset);
 	width: var(--letter-width);
 	height: var(--letter-height);
-	background: #87bcff;
+	background: var(--letter-primary-color);
 	position: relative;
 	transform-style: preserve-3d;
 	border-bottom-left-radius: 20px;
@@ -34,7 +38,7 @@
 	clip-path: polygon(100% 0, 100% 100%, 0 100%);
 	width: var(--letter-width);
 	height: var(--letter-height);
-	background-color: #3792e2;
+	background-color: var(--letter-secondary-color);
 	z-index: 6;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
@@ -48,7 +52,7 @@
 	clip-path: polygon(0 0, 100% 100%, 0 100%);
 	width: var(--letter-width);
 	height: var(--letter-height);
-	background-color: #51b9ec;
+	background-color: var(--letter-tertiary-color);
 	z-index: 5;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
@@ -61,7 +65,7 @@
 	transform-origin: bottom;
 	transform: rotateX(0deg);
 	clip-path: polygon(50% 0, 100% 100%, 0 100%);
-	background-color: #87bcff;
+	background-color: var(--letter-primary-color);
 	width: var(--letter-width);
 	height: calc(var(--letter-height) / 2);
 	z-index: 3;
@@ -117,7 +121,7 @@
 	font-weight: 600;
 	font-size: 30px;
 	opacity: 0;
-	color: #3792e2;
+	color: var(--letter-secondary-color);
 }
 
 .sended.successMessage {

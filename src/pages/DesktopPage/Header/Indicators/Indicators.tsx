@@ -1,8 +1,8 @@
-import battery from '../../../../assets/icons/battery.png'
-import microphone from '../../../../assets/icons/microphone.png'
-import sound from '../../../../assets/icons/sound.png'
-import wifi from '../../../../assets/icons/wifi.png'
-import s from './Indicaators.module.css'
+import battery from '../../../../assets/icons/desktop/battery.png'
+import microphone from '../../../../assets/icons/desktop/microphone.png'
+import sound from '../../../../assets/icons/desktop/sound.png'
+import wifi from '../../../../assets/icons/desktop/wifi.png'
+import s from './Indicators.module.css'
 
 export const Indicators = () => {
 	return (

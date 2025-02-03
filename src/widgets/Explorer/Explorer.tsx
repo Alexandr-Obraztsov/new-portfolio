@@ -1,41 +1,36 @@
-import projects from '../../assets/icons/projects.png'
+import { ReactNode } from 'react'
 import { BaseWidget } from '../../components/BaseWidget/BaseWidget'
-import { Label } from '../../components/Label/Label'
+import { Label, LabelPropsType } from '../../components/Label/Label'
 import { Widget } from '../types/Widget.types'
 import s from './Explorer.module.css'
 type Props = {
+	header?: ReactNode
+	title: string
+	labels: LabelPropsType[]
 	widget: Widget
 }
 
-export const Explorer = ({ widget }: Props) => {
-	const createLabel = (
-		title: string,
-		imgSrc: string,
-		position: { x: number; y: number }
-	) => (
-		<Label
-			title={title}
-			imgSrc={imgSrc}
-			position={position}
-			styles={{
-				labelTitle: {
-					color: '#6666667a',
-					fontSize: '16px',
-					lineHeight: '16px',
-				},
-				label: { gap: '0px' },
-			}}
-		/>
-	)
-
+export const Explorer = ({ header, title, labels, widget }: Props) => {
 	return (
-		<BaseWidget title='Explorer' widget={widget}>
+		<BaseWidget title={title} widget={widget}>
+			{header}
 			<div className={s.explorerContainer}>
-				{Array(5)
-					.fill(null)
-					.map((_, index) =>
-						createLabel(`label ${index}`, projects, { x: index + 1, y: 1 })
-					)}
+				{labels.map(lb => (
+					<Label
+						key={lb.title}
+						title={lb.title}
+						imgSrc={lb.imgSrc}
+						position={lb.position}
+						onClick={lb.onClick}
+						styles={{
+							labelTitle: {
+								fontSize: '16px',
+								lineHeight: '16px',
+							},
+							label: { gap: '0px' },
+						}}
+					/>
+				))}
 			</div>
 		</BaseWidget>
 	)

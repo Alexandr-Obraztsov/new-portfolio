@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react'
-import { getFullDate } from '../../../../helpers/getFullDate'
+import useMedia from 'use-media'
+import { getDateAsString } from '../../../../helpers/getDateAsString'
 import s from './Time.module.css'
 export const Time = () => {
-	const [date, setDate] = useState(getFullDate())
+	const [date, setDate] = useState(getDateAsString({}))
+	const isMobile = useMedia({ maxWidth: '768px' })
 
 	useEffect(() => {
+		setDate(getDateAsString({ weekday: !isMobile }))
 		const interval = setInterval(() => {
-			setDate(getFullDate())
+			setDate(getDateAsString({ weekday: !isMobile }))
 		}, 1000)
 
 		return () => clearInterval(interval)
-	}, [])
+	}, [isMobile])
 
 	return <div className={s.time}>{date}</div>
 }

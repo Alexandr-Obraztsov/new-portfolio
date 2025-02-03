@@ -1,12 +1,30 @@
-.explorerContainer {
-	display: grid;
-	grid-template-columns: repeat(5, var(--desktop-label-width));
-	grid-template-rows: repeat(3, var(--desktop-label-height));
-	gap: 10px;
+@keyframes init {
+	0% {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
-.explorerLabel {
-	width: 100px;
-	height: 100px;
-	background-color: red;
+.explorerContainer {
+	padding: 10px;
+	display: grid;
+	animation: init var(--animation-delay) var(--transition-delay) ease forwards;
+	opacity: 0;
+
+	min-width: 400px;
+	min-height: 300px;
+
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(var(--desktop-label-width), 1fr)
+	);
+	grid-template-rows: repeat(
+		auto-fill,
+		minmax(var(--desktop-label-height), 1fr)
+	);
+	gap: 10px;
 }

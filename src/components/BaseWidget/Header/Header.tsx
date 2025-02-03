@@ -1,17 +1,14 @@
-import { useWidgets } from '../../../hooks/useWidgets'
 import s from './Header.module.css'
 
 type Props = {
 	title: string
-	id: string
+	onClose: () => void
 }
 
-export const Header = ({ title, id }: Props) => {
-	const { closeWidget } = useWidgets()
-
+export const Header = ({ title, onClose }: Props) => {
 	return (
 		<div className={s.header}>
-			<button className={s.close} onClick={() => closeWidget({ id })}></button>
+			<button className={s.close} onClick={onClose}></button>
 			<h2 className={s.title}>{title}</h2>
 		</div>
 	)

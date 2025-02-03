@@ -1,27 +1,62 @@
 .bottomMenu {
-	position: absolute;
-	bottom: 10px;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: rgba(168, 168, 168, 0.411);
-	border-radius: 10px;
+	bottom: 20px;
 	display: flex;
-	justify-content: center;
 	align-items: end;
 	list-style: none;
-	height: 80px;
-	padding: '0 30px';
+	justify-content: center;
+	gap: 0px;
+
+	@media screen and (min-width: 768px) {
+		position: fixed;
+		transform: translateX(-50%);
+		left: 50%;
+		--icon-size: 70px;
+	}
+
+	@media screen and (max-width: 768px) {
+		position: static;
+		width: 100%;
+		--icon-size: 50px;
+	}
+}
+
+.bottomMenu::before {
+	border-radius: 20px;
+	content: '';
+	position: absolute;
+	height: var(--icon-size);
+	width: 100%;
+	background-color: var(--alpha-black-color);
+	box-shadow: 0 0 2px var(--separator-color) inset;
 }
 
 .menuItem {
-	transition: all var(--transition-delay);
-	display: block;
-	width: 80px;
-	height: 80px;
+	z-index: 1;
+	transition: all var(--transition-delay) ease-out;
+	height: var(--icon-size);
+	width: var(--icon-size);
+}
 
-	&:hover {
-		width: 100px;
-		height: 100px;
-		transform: translateY(-5px);
-	}
+.menuItem a {
+	position: relative;
+	display: block;
+}
+
+.itemName {
+	opacity: 0;
+	display: block;
+	background-color: var(--alpha-black-color);
+	box-shadow: 0 0 1px var(--separator-color) inset;
+	padding: 2px 10px;
+	border-radius: 10px;
+	color: var(--text-color);
+	font-size: 14px;
+	position: absolute;
+	left: 50%;
+	top: -10px;
+	transform: translate(-50%, -50%);
+}
+
+.menuItem:hover .itemName {
+	opacity: 1;
 }

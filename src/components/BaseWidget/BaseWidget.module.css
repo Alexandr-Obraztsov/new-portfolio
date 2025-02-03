@@ -12,8 +12,6 @@
 .baseWidget {
 	z-index: 4;
 	width: min-content;
-	border-radius: 10px;
-	overflow: hidden;
 	position: absolute;
 }
 
@@ -27,11 +25,10 @@ header.disabled {
 }
 
 .baseWidget article {
+	overflow: hidden;
+	border-radius: 10px;
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	background-color: rgb(255, 255, 255);
+	background-color: var(--alpha-black-purple-color);
+	backdrop-filter: blur(3px);
 	animation: appearance var(--transition-delay) linear forwards;
-}
-
-.widgetBody {
-	padding: 10px;
 }

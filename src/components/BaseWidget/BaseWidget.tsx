@@ -10,10 +10,11 @@ type Props = {
 	widget: Widget
 	title: string
 	children: ReactNode
+	onClose?: () => void
 }
 
-export const BaseWidget = ({ title, widget, children }: Props) => {
-	const { setActiveWidget } = useWidgets()
+export const BaseWidget = ({ title, widget, children, onClose }: Props) => {
+	const { closeWidget, setActiveWidget } = useWidgets()
 	const [position, setPosition] = useState({ x: 0, y: 0 })
 	const ref = useRef<HTMLElement | null>(null)
 
@@ -27,6 +28,11 @@ export const BaseWidget = ({ title, widget, children }: Props) => {
 
 	const handleFocus = () => {
 		setActiveWidget({ id: widget.id })
+	}
+
+	const handleClose = () => {
+		closeWidget({ id: widget.id })
+		onClose?.()
 	}
 
 	useLayoutEffect(() => {
@@ -53,7 +59,7 @@ export const BaseWidget = ({ title, widget, children }: Props) => {
 			<div>
 				<article ref={ref}>
 					<header className={(!widget.isActive && s.disabled) || ''}>
-						<Header title={title} id={widget.id} />
+						<Header title={title} onClose={handleClose} />
 					</header>
 					<section className={s.widgetBody}>{children}</section>
 				</article>
