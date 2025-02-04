@@ -51,7 +51,7 @@ const labels: LabelType[] = [
 ]
 
 export const Desktop = () => {
-	const { widgets, openWidget } = useWidgets()
+	const { openWidget } = useWidgets()
 
 	const handleClick = (widgetType: WidgetType) => () => {
 		openWidget({ type: widgetType })

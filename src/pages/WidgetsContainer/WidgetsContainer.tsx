@@ -20,6 +20,7 @@ export const WidgetsContainer = () => {
 			[WidgetType.MUSIC]: Music,
 			[WidgetType.PROJECTS]: Trash,
 			[WidgetType.SKILLS]: Trash,
+			[WidgetType.GAME]: Trash,
 		}
 
 		const WidgetComponent = widgetsMap[widget.type]
