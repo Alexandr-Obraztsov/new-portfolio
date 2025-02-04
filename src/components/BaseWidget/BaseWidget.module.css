@@ -9,6 +9,17 @@
 	}
 }
 
+@keyframes close {
+	0% {
+		scale: 1;
+		opacity: 1;
+	}
+	100% {
+		scale: 0.7;
+		opacity: 0;
+	}
+}
+
 .baseWidget {
 	z-index: 4;
 	width: min-content;
@@ -28,7 +39,14 @@ header.disabled {
 	overflow: hidden;
 	border-radius: 10px;
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	background-color: var(--alpha-black-purple-color);
-	backdrop-filter: blur(3px);
-	animation: appearance var(--transition-delay) linear forwards;
+	backdrop-filter: blur(5px);
+	animation: appearance var(--transition-delay) linear;
+}
+
+.widgetBody {
+	background-color: var(--widget-body-color);
+}
+
+.close {
+	animation: close var(--transition-delay) linear forwards !important;
 }

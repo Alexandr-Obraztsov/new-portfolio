@@ -3,15 +3,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 10px;
 }
 
 .formButton {
-	background-color: #a7d5db;
-	padding: 5px 40px;
-	border-radius: 10px;
+	background-color: var(--letter-secondary-color);
+	padding: 3px 40px;
+	border-radius: 5px;
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 14px;
 	cursor: pointer;
 }
 
@@ -23,21 +22,21 @@
 .contactField textarea,
 .contactField input {
 	scrollbar-width: thin;
-	padding: 0 10px;
+	padding: 0 5px;
 	width: 100%;
 	resize: none;
 	background-color: transparent;
 	border-bottom: 2px solid #9e9e9e54;
 	outline: none;
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 14px;
 	color: #272727;
 }
 
 .contactField textarea {
-	margin-top: 20px;
+	margin-top: 10px;
 	border: 2px solid #9e9e9e54;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 .contactField textarea::placeholder,
@@ -62,4 +61,30 @@
 
 .contactField > input:focus + span {
 	width: 100%;
+}
+
+.socials {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+}
+
+.socialItem {
+	width: 35px;
+	transition: all var(--transition-delay);
+
+	& > a {
+		display: block;
+	}
+}
+
+.socialItem:hover {
+	scale: 1.2;
+	transform: rotate(10deg);
+}
+
+.socialItem:nth-child(2n):hover {
+	transform: rotate(-10deg);
 }

@@ -1,19 +1,11 @@
 import dino from '@/assets/icons/desktop/dino.png'
-import github from '@/assets/icons/desktop/github.png'
-import instagram from '@/assets/icons/desktop/instagram.png'
-import linkedin from '@/assets/icons/desktop/linkedin.png'
-import telegram from '@/assets/icons/desktop/telegram.png'
-import vk from '@/assets/icons/desktop/vk.png'
+import { socials } from '@/consts/socials'
 import { useEffect, useRef } from 'react'
 import s from './BottomMenu.module.css'
 
 const menuItems = [
-	{ src: dino, name: 'Dino', href: '#' },
-	{ src: telegram, name: 'Telegram', href: '#' },
-	{ src: github, name: 'GitHub', href: '#' },
-	{ src: linkedin, name: 'LinkedIn', href: '#' },
-	{ src: vk, name: 'VK', href: '#' },
-	{ src: instagram, name: 'Instagram', href: '#' },
+	{ img: dino, title: 'Dino', link: '#' },
+	...Object.values(socials),
 ]
 
 export const BottomMenu = () => {
@@ -33,7 +25,7 @@ export const BottomMenu = () => {
 					const rect = item.getBoundingClientRect()
 					const offsetX = event.clientX - (rect.left + rect.width / 2)
 					const size =
-						Math.max(iconSize, (1.7 - Math.abs(offsetX / 350)) * iconSize) +
+						Math.max(iconSize, (1.6 - Math.abs(offsetX / 300)) * iconSize) +
 						'px'
 
 					item.style.width = size
@@ -63,10 +55,10 @@ export const BottomMenu = () => {
 	return (
 		<ul className={s.bottomMenu} ref={ref}>
 			{menuItems.map(item => (
-				<li key={item.name} className={s.menuItem}>
-					<a href={item.href}>
-						<img src={item.src} alt={item.name} width={'100%'} />
-						<span className={s.itemName}>{item.name}</span>
+				<li key={item.title} className={s.menuItem}>
+					<a href={item.link}>
+						<img src={item.img} alt={item.title} width={'100%'} />
+						<span className={s.itemName}>{item.title}</span>
 					</a>
 				</li>
 			))}

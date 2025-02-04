@@ -9,8 +9,8 @@
 	--alpha-black-color: rgba(0, 0, 0, 0.2);
 	--separator-color: rgb(255, 255, 255, 0.5);
 
-	--black-purple-color: #242339;
-	--alpha-black-purple-color: rgba(87, 50, 65, 0.8);
+	--widget-header-color: rgba(0, 0, 0, 0.45);
+	--widget-body-color: rgba(0, 0, 0, 0.4);
 
 	/* Настройки для десктопа */
 	--desktop-label-width: 110px;

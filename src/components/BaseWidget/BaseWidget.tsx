@@ -1,8 +1,7 @@
-import { ReactNode, useLayoutEffect, useRef, useState } from 'react'
-import Draggable, { DraggableData, DraggableEvent } from 'react-draggable'
-import { getWidgetRandomCoord } from '../../helpers/getWidgetRandomCoord'
+import { ReactNode, useRef } from 'react'
 import { useWidgets } from '../../hooks/useWidgets'
 import { Widget } from '../../widgets/types/Widget.types'
+import { Draggable } from '../Draggable/Draggable'
 import s from './BaseWidget.module.css'
 import { Header } from './Header/Header'
 
@@ -15,50 +14,33 @@ type Props = {
 
 export const BaseWidget = ({ title, widget, children, onClose }: Props) => {
 	const { closeWidget, setActiveWidget } = useWidgets()
-	const [position, setPosition] = useState({ x: 0, y: 0 })
-	const ref = useRef<HTMLElement | null>(null)
-
-	const handleDrag = (e: DraggableEvent, data: DraggableData) => {
-		if (data.node)
-			setPosition({
-				x: data.x,
-				y: data.y,
-			})
-	}
+	const ref = useRef<HTMLDivElement>(null)
 
 	const handleFocus = () => {
 		setActiveWidget({ id: widget.id })
 	}
 
 	const handleClose = () => {
-		closeWidget({ id: widget.id })
+		ref.current!.className = s.close
 		onClose?.()
+		setTimeout(() => closeWidget({ id: widget.id }), 100)
 	}
-
-	useLayoutEffect(() => {
-		if (ref.current) {
-			const width = ref.current.offsetWidth
-			const height = ref.current.offsetHeight
-			setPosition({
-				x: getWidgetRandomCoord(0, document.body.offsetWidth - width),
-				y: getWidgetRandomCoord(0, document.body.offsetHeight - height),
-			})
-		}
-	}, [])
 
 	const widgetClasses = `${s.baseWidget} ${!widget.isActive && s.disabled}`
 
 	return (
 		<Draggable
-			defaultClassName={widgetClasses}
-			position={position}
-			onDrag={handleDrag}
-			onMouseDown={handleFocus}
-			handle='header'
+			defaultClass={widgetClasses}
+			defaultPosition={{ x: '50%', y: '50%' }}
+			handleId='header'
+			onFocus={handleFocus}
 		>
 			<div>
-				<article ref={ref}>
-					<header className={(!widget.isActive && s.disabled) || ''}>
+				<article ref={ref} className=''>
+					<header
+						id='header'
+						className={(!widget.isActive && s.disabled) || ''}
+					>
 						<Header title={title} onClose={handleClose} />
 					</header>
 					<section className={s.widgetBody}>{children}</section>

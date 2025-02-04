@@ -1,3 +1,4 @@
+import { socials } from '@/consts/socials'
 import { useForm } from 'react-hook-form'
 import s from './ContactForm.module.css'
 type Props = {
@@ -18,7 +19,7 @@ export const ContactForm = ({ onSend }: Props) => {
 			message: '',
 		} as FormFields,
 	})
-	const handleSend = (data: FormFields) => {
+	const handleSend = () => {
 		onSend()
 		setTimeout(() => {
 			reset()
@@ -36,9 +37,17 @@ export const ContactForm = ({ onSend }: Props) => {
 				<span></span>
 			</div>
 			<div className={s.contactField}>
-				<textarea placeholder='Message' {...register('message')} rows={6} />
-				<span></span>
+				<textarea placeholder='Message' {...register('message')} rows={4} />
 			</div>
+			<ul className={s.socials}>
+				{Object.values(socials).map(social => (
+					<li key={social.title} className={s.socialItem}>
+						<a href={social.link}>
+							<img src={social.img} alt={social.title} width={'100%'} />
+						</a>
+					</li>
+				))}
+			</ul>
 			<button className={s.formButton} type='submit'>
 				Send
 			</button>

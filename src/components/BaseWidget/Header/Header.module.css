@@ -1,5 +1,5 @@
 .header {
-	background-color: var(--black-purple-color);
+	background-color: var(--widget-header-color);
 	position: relative;
 	padding: 3px 6px;
 	display: flex;

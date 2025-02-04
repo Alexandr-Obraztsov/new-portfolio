@@ -1,9 +1,9 @@
 .musicContainer {
-	padding: 15px 20px;
+	padding: 10px 15px;
 	display: flex;
 	flex-direction: column;
 	font-family: 'Roboto', sans-serif;
-	min-width: 280px;
+	width: 300px;
 }
 
 .info {
@@ -11,7 +11,7 @@
 	align-items: center;
 	color: var(--text-color);
 
-	grid-template-columns: 80px 1fr;
+	grid-template-columns: 60px 1fr;
 	text-align: left;
 	column-gap: 20px;
 	grid-template-areas:
@@ -21,8 +21,8 @@
 
 .musicPicture {
 	grid-area: picture;
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	border-radius: 10px;
 	background-color: #582e46;
 	background-size: cover;
@@ -30,8 +30,8 @@
 
 .musicTitle {
 	grid-area: title;
-	font-size: 27px;
-	line-height: 32px;
+	font-size: 20px;
+	line-height: 24px;
 	letter-spacing: 1px;
 	font-weight: 700;
 	align-self: flex-end;
@@ -41,8 +41,8 @@
 	align-self: flex-start;
 	grid-area: author;
 	white-space: nowrap;
-	line-height: 25px;
-	font-size: 19px;
+	font-size: 16px;
+	line-height: 20px;
 	font-weight: 500;
 	opacity: 0.68;
 }
@@ -62,7 +62,7 @@
 }
 
 .timeline {
-	margin-top: 20px;
+	margin-top: 10px;
 	display: flex;
 	flex-direction: column;
 }
@@ -101,10 +101,10 @@
 }
 
 .timeline span {
+	margin-top: 4px;
 	color: var(--text-color);
 	display: block;
 	text-align: center;
-	margin-top: 4px;
-	font-size: 18px;
-	font-weight: 600;
+	font-size: 14px;
+	font-weight: 500;
 }
