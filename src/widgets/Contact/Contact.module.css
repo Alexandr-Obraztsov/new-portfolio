@@ -2,19 +2,19 @@
 	--letter-width: 350px;
 	--letter-height: 200px;
 	--letter-body-height: 360px;
-	--form-top-offset: 170px;
+	--form-top-offset: 190px;
 	--letter-translate-delay: 0.5s;
 	--letter-sending-delay: 2s;
 
-	--letter-primary-color: #d8dbdd;
-	--letter-secondary-color: #cbd0d4;
-	--letter-tertiary-color: #c4c5c7;
+	--letter-primary-color: var(--main-secondary);
+	--letter-secondary-color: var(--main-border);
+	--letter-tertiary-color: var(--main-focus);
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
-	height: 400px;
+	height: 420px;
 
 	padding-inline: 10px;
 }

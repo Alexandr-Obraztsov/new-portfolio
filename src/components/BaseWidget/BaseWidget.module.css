@@ -32,7 +32,7 @@
 
 header.disabled {
 	transition: all var(--transition-delay) linear;
-	filter: grayscale(1);
+	filter: grayscale(0.4);
 }
 
 .baseWidget article {
@@ -44,7 +44,7 @@ header.disabled {
 }
 
 .widgetBody {
-	background-color: var(--widget-body-color);
+	background-color: var(--system-secondary);
 }
 
 .close {

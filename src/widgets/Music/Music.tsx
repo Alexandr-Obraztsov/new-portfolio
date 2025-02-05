@@ -1,14 +1,11 @@
+import { Next, Pause, Play, Prev } from '@/assets/icons/widgets/music'
+import okeyImg from '@/assets/images/okey.jpg'
+import wonderfulWorldImg from '@/assets/images/wonderfulworld.jpg'
+import okey from '@/assets/music/okey.mp3'
+import wonderfulWorld from '@/assets/music/wonderfulWorld.mp3'
+import { BaseWidget } from '@/components/BaseWidget/BaseWidget'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import useSound from 'use-sound'
-import back from '../../assets/icons/widgets/music/back.png'
-import next from '../../assets/icons/widgets/music/next.png'
-import pauseIcon from '../../assets/icons/widgets/music/pause.png'
-import playIcon from '../../assets/icons/widgets/music/play.png'
-import okeyImg from '../../assets/images/okey.jpg'
-import wonderfulWorldImg from '../../assets/images/wonderfulworld.jpg'
-import okey from '../../assets/music/okey.mp3'
-import wonderfulWorld from '../../assets/music/wonderfulWorld.mp3'
-import { BaseWidget } from '../../components/BaseWidget/BaseWidget'
 import { WidgetProps } from '../types/WidgetProps.types'
 import s from './Music.module.css'
 
@@ -133,13 +130,13 @@ export const Music = ({ widget }: WidgetProps) => {
 					<span className={s.musicAuthor}>{musics[musicIndex].author}</span>
 				</div>
 				<div className={s.controls}>
-					<img src={back} alt='back' onClick={handleClickBack} />
-					<img
-						src={isActive ? pauseIcon : playIcon}
-						alt='pause'
-						onClick={handleClickPlay}
-					/>
-					<img src={next} alt='next' onClick={handleClickNext} />
+					<Prev onClick={handleClickBack} />
+					{isActive ? (
+						<Pause onClick={handleClickPlay} />
+					) : (
+						<Play onClick={handleClickPlay} />
+					)}
+					<Next onClick={handleClickNext} />
 				</div>
 				<div className={s.timeline} ref={timelineRef} onMouseDown={onMouseDown}>
 					<div className={s.progressBar}>
