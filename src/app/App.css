@@ -1,16 +1,6 @@
 :root {
-	--text-color: rgb(231, 231, 231);
-	--secondary-text-color: #9a9ab3;
-	--text-hovered-color: rgb(224, 160, 240);
 	--transition-delay: 0.1s;
 	--animation-delay: 0.5s;
-
-	--black-color: rgb(0, 0, 0);
-	--alpha-black-color: rgba(0, 0, 0, 0.2);
-	--separator-color: rgb(255, 255, 255, 0.5);
-
-	--widget-header-color: rgba(0, 0, 0, 0.45);
-	--widget-body-color: rgba(0, 0, 0, 0.4);
 
 	/* Настройки для десктопа */
 	--desktop-label-width: 110px;
@@ -22,6 +12,67 @@
 		--desktop-label-height: 120px;
 		--desktop-label-font-size: 20px;
 	}
+
+	--gray-101: rgba(255, 255, 255, 1);
+	--gray-102: rgba(245, 245, 245, 1);
+	--gray-110: rgba(237, 237, 237, 1);
+	--gray-103: rgba(224, 224, 224, 1);
+	--gray-104: rgba(194, 194, 194, 1);
+	--gray-105: rgba(158, 158, 158, 1);
+	--gray-106: rgba(92, 92, 92, 1);
+	--gray-107: rgba(71, 71, 71, 1);
+	--gray-108: rgba(38, 38, 38, 1);
+	--gray-109: rgba(10, 10, 10, 1);
+
+	--bottom-menu-color: rgba(255, 255, 255, 0.5);
+}
+
+.light-theme {
+	--wallpaper: url(@/assets/wallpapers/light.jpg);
+
+	--main-primary: rgba(33, 56, 208, 1);
+	--main-secondary: rgba(211, 215, 246, 1);
+	--main-border: rgba(181, 189, 239, 1);
+	--main-hover: rgba(22, 37, 139, 1);
+	--main-pressed: rgba(16, 28, 104, 1);
+	--main-focus: rgba(144, 156, 232, 1);
+
+	--system-primary: rgba(51, 162, 254, 1);
+	--system-secondary: rgba(214, 236, 255, 1);
+	--system-border: rgba(187, 224, 255, 1);
+	--system-hover: rgba(34, 108, 169, 1);
+	--system-pressed: rgba(26, 81, 127, 1);
+	--system-focus: rgba(153, 208, 254, 1);
+
+	--text-color: black;
+}
+
+.dark-theme {
+	--wallpaper: url(@/assets/wallpapers/night.jpg);
+
+	--text-color: rgb(231, 231, 231);
+	--secondary-text-color: #9a9ab3;
+	--text-hovered-color: rgb(224, 160, 240);
+
+	--black-color: rgb(0, 0, 0);
+	--alpha-black-color: rgba(0, 0, 0, 0.2);
+	--separator-color: rgb(255, 255, 255, 0.5);
+
+	--widget-header-color: rgba(0, 0, 0, 0.45);
+	--widget-body-color: rgba(0, 0, 0, 0.4);
+
+	--main-primary: rgba(33, 56, 208, 1);
+	--main-secondary: rgba(211, 215, 246, 1);
+	--main-border: rgba(181, 189, 239, 1);
+	--main-hover: rgba(22, 37, 139, 1);
+	--main-pressed: rgba(16, 28, 104, 1);
+	--main-focus: rgba(144, 156, 232, 1);
+
+	--system-primary: rgba(51, 162, 254, 1);
+	--system-secondary: rgba(214, 236, 255, 1);
+	--system-border: rgba(187, 224, 255, 1);
+	--system-hover: rgba(34, 108, 169, 1);
+	--system-pressed: rgba(26, 81, 127, 1);
 }
 
 html,
@@ -38,7 +89,21 @@ body,
 	-webkit-user-drag: none;
 }
 body {
-	font-family: 'Titillium Web', system-ui, -apple-system, BlinkMacSystemFont,
+	font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont,
 		'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
 		sans-serif;
+}
+
+@font-face {
+	font-family: 'SF Pro Display';
+	src: url('/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SF Pro Display';
+	src: url('/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
 }

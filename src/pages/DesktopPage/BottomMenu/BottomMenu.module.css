@@ -26,7 +26,7 @@
 	position: absolute;
 	height: var(--icon-size);
 	width: 100%;
-	background-color: var(--alpha-black-color);
+	background-color: var(--bottom-menu-color);
 	box-shadow: 0 0 2px var(--separator-color) inset;
 }
 
@@ -45,15 +45,15 @@
 .itemName {
 	opacity: 0;
 	display: block;
-	background-color: var(--alpha-black-color);
+	background-color: var(--bottom-menu-color);
 	box-shadow: 0 0 1px var(--separator-color) inset;
-	padding: 2px 10px;
+	padding: 3px 15px;
 	border-radius: 10px;
 	color: var(--text-color);
-	font-size: 14px;
+	font-size: 20px;
 	position: absolute;
 	left: 50%;
-	top: -10px;
+	top: -15px;
 	transform: translate(-50%, -50%);
 }
 

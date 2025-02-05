@@ -3,23 +3,10 @@
 	gap: 15px;
 	flex-direction: row;
 	align-items: center;
+	height: 30px;
 	justify-content: flex-end;
-	color: var(--text-color);
 }
 
 .indicators > img {
 	height: 18px;
-	filter: invert(1);
-}
-
-.username {
-	white-space: nowrap;
-	font-size: 16px;
-	font-weight: 600;
-	letter-spacing: 2px;
-	padding-left: 20px;
-
-	@media screen and (max-width: 768px) {
-		display: none;
-	}
 }

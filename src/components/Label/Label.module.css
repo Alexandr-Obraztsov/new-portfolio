@@ -39,10 +39,9 @@
 	line-height: calc(var(--desktop-label-font-size) + 5px);
 	text-align: center;
 	color: var(--text-color);
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 	width: 100%;
-	font-weight: 500;
-	word-break: break-all;
+	font-weight: 400;
+	word-break: keep-all;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	max-height: calc(var(--desktop-label-font-size) * 3);

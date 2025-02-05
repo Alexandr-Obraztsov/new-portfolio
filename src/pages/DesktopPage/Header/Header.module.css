@@ -1,11 +1,14 @@
-.statusBar {
+.header {
 	width: 100%;
-	padding: 5px 30px;
-	background-color: var(--alpha-black-color);
+	padding: 0 24px;
+	height: 40px;
+	background-color: var(--system-focus);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	z-index: 9999;
+	font-weight: normal;
+	font-size: 20px;
 
 	& > * {
 		flex-basis: calc(100% / 3);
