@@ -1,22 +1,51 @@
 .desktopContainer {
 	overflow: hidden;
-	opacity: 1;
+	position: relative;
+}
+
+.desktopContainer::before {
 	transition: opacity var(--animation-delay) ease;
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	background: var(--wallpaper);
+	background-position: center;
+	background-size: cover;
+	z-index: -1;
+}
+
+.desktopContainer.hidden::before {
+	filter: blur(4px);
 }
 
 .desktop {
+	transition: opacity var(--animation-delay) ease;
 	display: flex;
 	position: relative;
 	flex-direction: column;
-	background-image: var(--wallpaper);
-	background-position: center;
-	background-size: cover;
+	background: transparent;
 	width: 100vw;
 	height: 100vh;
 }
 
-.hidden {
-	& > * {
-		opacity: 0;
-	}
+.desktop.hidden {
+	opacity: 0;
+}
+
+.loading {
+	transition: opacity var(--transition-delay) ease;
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.loading.hidden {
+	opacity: 0;
+	pointer-events: none;
 }
